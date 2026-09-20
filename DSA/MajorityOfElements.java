@@ -24,7 +24,5 @@ public class MajorityOfElements {
         int arr[] = {1,2,3,3,3};
         int result = major(arr);
         System.out.println(result);
-
-
     }
 }
