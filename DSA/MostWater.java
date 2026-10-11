@@ -7,22 +7,33 @@ public class MostWater {
         int maxWater = 0;
 
         while(left < right){
+
             int width = right - left;
 
-            int waterHeight = Math.min(height[left], height[right]);
+            int waterHeight;
+
+            if(height[left] < height[right]){
+                waterHeight = height[left];
+            }
+            else{
+                waterHeight = height[right];
+            }
 
             int currentWater = width * waterHeight;
 
-            maxWater = Math.max(maxWater, currentWater);
+            if(currentWater > maxWater){
+                maxWater = currentWater;
+            }
 
             if(height[left] < height[right]){
-
-                left ++;
+                left++;
             }
             else{
-                right --;
+                right--;
             }
+
         }
+      
         return maxWater;
 
     }
